@@ -1,10 +1,11 @@
 package de.example.backend.controller;
 
+import de.example.backend.entity.Tutor;
 import de.example.backend.model.TutorDTO;
 import de.example.backend.service.TutorService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +22,12 @@ public class TutorController {
     @GetMapping
     public List<TutorDTO> findAll() {
         return tutorService.findAll();
+    }
+
+    @PostMapping
+    public ResponseEntity<Tutor> create(@RequestBody TutorDTO tutorDTO) {
+        Tutor newTutor = tutorService.create(tutorDTO);
+        return new ResponseEntity<>(newTutor, HttpStatus.CREATED);
     }
 
 }
