@@ -44,8 +44,8 @@ public class TutorController {
     @DeleteMapping
     public ResponseEntity<?> delete(@RequestBody TutorDTO tutorDTO) {
         try {
-            Tutor deletedTutor = tutorService.delete(tutorDTO);
-            return new ResponseEntity<>(deletedTutor, HttpStatus.OK);
+            tutorService.delete(tutorDTO);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (TutorNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

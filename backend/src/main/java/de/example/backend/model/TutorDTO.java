@@ -1,6 +1,6 @@
 package de.example.backend.model;
 
-import java.util.List;
+import java.util.Set;
 
 public class TutorDTO {
     private Long id;
@@ -9,11 +9,11 @@ public class TutorDTO {
     private String email;
     private String city;
     private String plz;
-    private List<String> subjects;
+    private Set<String> subjects;
     private String price;
 
     public TutorDTO(Long id, String firstName, String lastName, String email,
-                    String city, String plz, List<String> subjects, String price) {
+                    String city, String plz, Set<String> subjects, String price) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -72,11 +72,11 @@ public class TutorDTO {
         this.plz = plz;
     }
 
-    public List<String> getSubjects() {
+    public Set<String> getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(List<String> subjects) {
+    public void setSubjects(Set<String> subjects) {
         this.subjects = subjects;
     }
 

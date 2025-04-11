@@ -10,10 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.Currency;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class TutorService {
@@ -62,9 +60,9 @@ public class TutorService {
 
     public TutorDTO mapToDTO(Tutor tutor) {
         String price = formatPrice(tutor.getPricePerHour());
-        List<String> subjects = tutor.getSubjectList().stream()
+        Set<String> subjects = tutor.getSubjects().stream()
                 .map(Subject::getName)
-                .toList();
+                .collect(Collectors.toSet());
 
         return new TutorDTO(tutor.getId(), tutor.getFirstName(), tutor.getLastName(), tutor.getEmail(),
                 tutor.getCity(), tutor.getPlz(), subjects, price);
@@ -77,8 +75,8 @@ public class TutorService {
         tutor.setEmail(tutorDTO.getEmail());
         tutor.setCity(tutorDTO.getCity());
         tutor.setPlz(tutorDTO.getPlz());
-        List<Subject> subjectList = subjectRepository.findByNameIn(tutorDTO.getSubjects());
-        tutor.setSubjectList(subjectList);
+        Set<Subject> subjects = subjectRepository.findByNameIn(tutorDTO.getSubjects());
+        tutor.setSubjects(subjects);
         tutor.setPricePerHour(new BigDecimal(tutorDTO.getPrice()));
         return tutor;
     }

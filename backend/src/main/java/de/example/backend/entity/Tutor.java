@@ -3,7 +3,8 @@ package de.example.backend.entity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Tutor {
@@ -22,8 +23,13 @@ public class Tutor {
 
     private String plz;
 
-    @OneToMany
-    private List<Subject> subjectList;
+    @ManyToMany
+    @JoinTable(
+            name = "tutor_subject",
+            joinColumns = @JoinColumn(name = "tutor_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id")
+    )
+    private Set<Subject> subjects = new HashSet<>();
 
     @Column(precision = 10, scale = 2)
     private BigDecimal pricePerHour;
@@ -84,11 +90,11 @@ public class Tutor {
         this.pricePerHour = pricePerHour;
     }
 
-    public List<Subject> getSubjectList() {
-        return subjectList;
+    public Set<Subject> getSubjects() {
+        return subjects;
     }
 
-    public void setSubjectList(List<Subject> subjectList) {
-        this.subjectList = subjectList;
+    public void setSubjects(Set<Subject> subjectList) {
+        this.subjects = subjectList;
     }
 }
