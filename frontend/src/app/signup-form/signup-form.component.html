@@ -1,0 +1,29 @@
+<form [formGroup]="signUpform" (ngSubmit)="onSubmit()">
+
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName">
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+
+  <label for="city">City: </label>
+  <input id="city" type="text" formControlName="city">
+
+  <label for="index">Index: </label>
+  <input id="index" type="text" formControlName="index">
+
+  <label for="email">E-mail: </label>
+  <input id="email" type="text" formControlName="email">
+
+  <label for="dateOfBirth">Date of Birth: </label>
+  <input id="dateOfBirth" type="text" formControlName="dateOfBirth">
+
+  <label for="hourRate">Rate per Hour: </label>
+  <input id="hourRate" type="text" formControlName="hourRate">
+
+  <label for="subjects">Subjects: </label>
+  <input id="subjects" type="text" formControlName="subjects">
+
+  <button mat-flat-button (submit)="onSubmit()">Submit</button>
+
+</form>
