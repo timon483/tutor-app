@@ -1,3 +1,6 @@
 .my-header {
   background-color: var(--tutor-accent);
+  height: 125px;
+  display: grid;
+  align-items: center;
 }
