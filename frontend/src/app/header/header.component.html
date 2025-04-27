@@ -1,0 +1,17 @@
+<div class="container my-header">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <!-- TODO: Menu nav as its own component in the future-->
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8">
+      <h1 class="manrope-semibold">Tutors' App</h1>
+    </div>
+  </div>
+</div>
