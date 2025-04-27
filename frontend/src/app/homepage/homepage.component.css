@@ -1,3 +1,15 @@
 .my-homepage {
   background-color: var(--tutor-primary);
 }
+
+.mat-mdc-unelevated-button {
+  background-color: var(--tutor-secondary) !important;
+  color: var(--text-color) !important;
+  width: 320px;
+  height: 100px;
+  font-family: "Manrope", sans-serif;
+}
+
+.my-radius {
+  border-radius: 50%;
+}

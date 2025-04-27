@@ -3,14 +3,17 @@
 @import "bootstrap/scss/bootstrap-utilities.scss";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;
+background-color: var(--tutor-primary)}
+body { margin: 0;}
 
 :root {
   --tutor-accent: #d9b1e2;
   --tutor-primary: #f3ece3;
   --tutor-secondary: #53cace;
   --tutor-tertiary: #f3ddc1;
+
+  --text-color: #050606;
 
   --text-h1: Manrope;
 
