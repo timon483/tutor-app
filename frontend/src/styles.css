@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 html, body { height: 100%;
-background-color: var(--tutor-primary)}
-body { margin: 0;}
+background-color: var(--tutor-primary)
+}
 
 :root {
   --tutor-accent: #d9b1e2;

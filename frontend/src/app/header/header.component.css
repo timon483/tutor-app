@@ -3,4 +3,5 @@
   height: 125px;
   display: grid;
   align-items: center;
+  box-sizing: content-box;
 }
