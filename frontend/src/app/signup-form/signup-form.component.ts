@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {first} from 'rxjs';
 import {MatButton} from '@angular/material/button';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-signup-form',
-  imports: [ReactiveFormsModule, MatButton],
+  imports: [ReactiveFormsModule, MatButton, RouterLink],
   templateUrl: './signup-form.component.html',
   styleUrl: './signup-form.component.css'
 })
