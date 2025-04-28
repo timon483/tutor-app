@@ -4,7 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 html, body { height: 100%;
-background-color: var(--tutor-primary)
+background-color: var(--tutor-primary);
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
 }
 
 :root {

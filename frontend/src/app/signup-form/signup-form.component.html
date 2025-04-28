@@ -1,4 +1,6 @@
-<form [formGroup]="signUpform" (ngSubmit)="onSubmit()">
+<h1>Enter your personal data:</h1>
+
+<form class="forms mx-5 my-5" [formGroup]="signUpform" (ngSubmit)="onSubmit()">
 
   <label for="first-name">First Name: </label>
   <input id="first-name" type="text" formControlName="firstName">
@@ -13,7 +15,7 @@
   <input id="index" type="text" formControlName="index">
 
   <label for="email">E-mail: </label>
-  <input id="email" type="text" formControlName="email">
+  <input id="email" type="email" formControlName="email">
 
   <label for="dateOfBirth">Date of Birth: </label>
   <input id="dateOfBirth" type="text" formControlName="dateOfBirth">

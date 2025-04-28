@@ -1,0 +1,16 @@
+input {
+  background-color: var(--tutor-tertiary);
+  border-radius: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.forms {
+  display: grid;
+}
+
+h1 {
+  text-align: center;
+
+}
