@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "bootstrap/scss/bootstrap-grid.scss";
-@import "bootstrap/scss/bootstrap-utilities.scss";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@use "bootstrap/scss/bootstrap-grid.scss";
+@use "bootstrap/scss/bootstrap-utilities.scss";
 
 html, body { height: 100%;
 background-color: var(--tutor-primary);

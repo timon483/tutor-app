@@ -13,7 +13,7 @@ import {MatIcon} from '@angular/material/icon';
     MatIcon
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 

@@ -11,7 +11,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './confirmation-page.component.html',
-  styleUrl: './confirmation-page.component.css'
+  styleUrl: './confirmation-page.component.scss'
 })
 export class ConfirmationPageComponent {
 

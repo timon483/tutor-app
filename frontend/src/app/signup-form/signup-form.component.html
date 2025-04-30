@@ -1,4 +1,4 @@
-<h1>Enter your personal data:</h1>
+<h1>Sign up to Tutors' App</h1>
 
 <form class="forms mx-5 my-5" [formGroup]="signUpform" (ngSubmit)="onSubmit()">
 
@@ -26,6 +26,40 @@
   <label for="subjects">Subjects: </label>
   <input id="subjects" type="text" formControlName="subjects">
 
+  <mat-form-field class="example-chip-list">
+    <mat-label>Favorite Subjects</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Enter fruits">
+      @for (subjects of subjects(); track subjects) {
+        <mat-chip-row
+          (removed)="remove(subjects)"
+          [editable]="true"
+          (edited)="edit(subjects, $event)"
+          [aria-description]="'press enter to edit ' + subjects.name"
+        >
+          {{subjects.name}}
+          <button matChipRemove [attr.aria-label]="'remove ' + subjects.name">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      }
+      <input
+        placeholder="New fruit..."
+        [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-grid>
+  </mat-form-field>
+
   <button mat-flat-button (submit)="onSubmit()" routerLink="/confirmation">Submit</button>
+
+  <button mat-flat-button (submit)="onSubmit()" routerLink="/confirmation">
+    <mat-icon>cancel</mat-icon>
+  </button>
+
+
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+
 
 </form>
